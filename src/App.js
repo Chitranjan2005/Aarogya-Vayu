@@ -51,7 +51,7 @@ const {locationLoading,latitude,longitude} = useGeolocation(handlesearch);
           <>
             {console.log("DEBUG: AQIDisplay receiving location:", currentlocation, "and aqiData:", aqidata)}
             <AQIDisplay location={currentlocation} aqidata={aqidata} />
-            <MapView location={currentlocation} latitude={latitude} longitude={longitude} />
+            
           </>
         )}
       </main>
