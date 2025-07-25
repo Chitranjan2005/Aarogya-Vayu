@@ -6,8 +6,13 @@ import AQIDisplay from './components/aqidisplay';
 import MapView from './components/mapview';
 import Footer from './components/footer';
 import useGeolocation from './hooks/livelocation';
+import 'leaflet/dist/leaflet.css';
+
 
 function App() {
+  const { address } = useGeolocation();
+
+  
 
   const[darkmode, setdarkmode] = useState(false);
 
@@ -51,6 +56,15 @@ const {locationLoading,latitude,longitude} = useGeolocation(handlesearch);
           <>
             {console.log("DEBUG: AQIDisplay receiving location:", currentlocation, "and aqiData:", aqidata)}
             <AQIDisplay location={currentlocation} aqidata={aqidata} />
+             <div>
+      <h1>My Leaflet Map</h1>
+      <MapView />
+    </div>
+    <div>
+      <h2>📍 Your Current Address</h2>
+      <p>{address || "Fetching your address..."}</p>
+    </div>
+
             
           </>
         )}

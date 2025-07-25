@@ -15,7 +15,7 @@ const useGeolocation = () => {
 
         console.log(latitude, longitude);
 
-        const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude};`
+        const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
 
         fetch(url)
           .then((res) => res.json())
@@ -31,6 +31,7 @@ const useGeolocation = () => {
   }, []);
 
   return { lat, lon, address };
+  
 };
 
 export default useGeolocation;
